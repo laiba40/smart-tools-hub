@@ -314,8 +314,9 @@ margin-top:10px;
 <h3>eBay Profit Calculator</h3>
 
 <p>Calculate profit after eBay & PayPal fees.</p>
-
-<button>Open Tool</button>
+<button onclick="location.href='ebay-calculator.html'">
+Open Tool
+</button>
 
 </div>
 
