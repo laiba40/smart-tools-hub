@@ -3,14 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eBay Profit Calculator | Smart Tools Hub</title>
-</head>
+<title>eBay Profit Calculator</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+.container{
+    max-width:700px;
+    margin:50px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.result{
+    margin-top:25px;
+    background:#eef4ff;
+    padding:20px;
+    border-radius:10px;
+}
+
+.result p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.profit{
+    color:green;
+    font-weight:bold;
+}
+</style>
+
+</head>
 <body>
+
+<div class="container">
 
 <h1>eBay Profit Calculator</h1>
 
-<p>This calculator is under development.</p>
+<div class="input-group">
+<label>Selling Price ($)</label>
+<input type="number" id="sellingPrice">
+</div>
+
+<div class="input-group">
+<label>Product Cost ($)</label>
+<input type="number" id="productCost">
+</div>
+
+<div class="input-group">
+<label>Shipping Cost ($)</label>
+<input type="number" id="shippingCost">
+</div>
+
+<div class="input-group">
+<label>eBay Fee (%)</label>
+<input type="number" id="ebayFee" value="13">
+</div>
+
+<div class="input-group">
+<label>Payment Fee (%)</label>
+<input type="number" id="paymentFee" value="3">
+</div>
+
+<button onclick="calculateProfit()">
+Calculate Profit
+</button>
+
+<div class="result">
+
+<p>eBay Fee: $<span id="fee">0.00</span></p>
+
+<p>Payment Fee: $<span id="payment">0.00</span></p>
+
+<p class="profit">
+Profit: $<span id="profit">0.00</span>
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function calculateProfit(){
+
+let selling=parseFloat(document.getElementById("sellingPrice").value)||0;
+
+let cost=parseFloat(document.getElementById("productCost").value)||0;
+
+let shipping=parseFloat(document.getElementById("shippingCost").value)||0;
+
+let ebayPercent=parseFloat(document.getElementById("ebayFee").value)||0;
+
+let paymentPercent=parseFloat(document.getElementById("paymentFee").value)||0;
+
+let ebayFee=selling*ebayPercent/100;
+
+let paymentFee=selling*paymentPercent/100;
+
+let profit=selling-cost-shipping-ebayFee-paymentFee;
+
+document.getElementById("fee").innerText=ebayFee.toFixed(2);
+
+document.getElementById("payment").innerText=paymentFee.toFixed(2);
+
+document.getElementById("profit").innerText=profit.toFixed(2);
+
+}
+
+</script>
 
 </body>
 </html>
