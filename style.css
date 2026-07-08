@@ -28,12 +28,14 @@ header h1{
     gap:10px;
     font-size:28px;
     font-weight:700;
+    color:white;
 }
 
 nav{
     display:flex;
     align-items:center;
     gap:25px;
+    margin-left:auto;
 }
 
 header nav a{
