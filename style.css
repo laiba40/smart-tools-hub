@@ -1,4 +1,5 @@
-/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
@@ -7,8 +8,8 @@
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#f5f7fb;
-    color:#222;
+    background:#f8fafc;
+    color:#1e293b;
 }
 
 /* Navbar */
@@ -18,30 +19,23 @@ body{
     justify-content:space-between;
     align-items:center;
     padding:18px 8%;
-    background:#0f172a;
-    color:#fff;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
     position:sticky;
     top:0;
+    z-index:1000;
 }
 
 .logo{
-    font-size:28px;
+    font-size:26px;
     font-weight:700;
-}
-
-.logo i{
-    color:#38bdf8;
-}
-
-.navbar ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
+    letter-spacing:1px;
 }
 
 .navbar a{
-    text-decoration:none;
     color:white;
+    text-decoration:none;
+    margin-left:25px;
     font-weight:500;
     transition:.3s;
 }
@@ -50,59 +44,200 @@ body{
     color:#38bdf8;
 }
 
-/* Hero */
+
+/* Hero Section */
 
 .hero{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:100px 20px;
-    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    padding:40px 10%;
+    background:
+    linear-gradient(135deg,rgba(15,23,42,.9),rgba(37,99,235,.8)),
+    url("background.jpg");
+    background-size:cover;
     color:white;
 }
 
 .hero h1{
-    font-size:55px;
+    font-size:48px;
     margin-bottom:20px;
 }
 
 .hero p{
-    font-size:20px;
-    max-width:700px;
-    margin:auto;
-    line-height:1.7;
-}
-
-.hero input{
-    margin-top:35px;
-    width:600px;
-    max-width:90%;
-    padding:18px;
-    border:none;
-    border-radius:50px;
     font-size:18px;
-    outline:none;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    max-width:650px;
+    margin:auto;
+    opacity:.9;
 }
 
-/* Mobile */
+.hero button{
+    margin-top:30px;
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    background:#38bdf8;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero button:hover{
+    transform:translateY(-5px);
+    background:#0ea5e9;
+}
+
+
+/* Tools Section */
+
+.tools{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+
+.tool-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+
+/* Cards */
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+    text-align:center;
+    border:1px solid #e2e8f0;
+}
+
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+
+.card h3{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+
+.card p{
+    color:#64748b;
+    font-size:15px;
+}
+
+
+.card button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.card button:hover{
+    background:#1d4ed8;
+}
+
+
+/* Input Areas */
+
+input,textarea,select{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #cbd5e1;
+    font-size:15px;
+}
+
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+
+/* Footer */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+
+/* Animation */
+
+.card{
+    animation:fade .6s ease;
+}
+
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* Mobile Responsive */
 
 @media(max-width:768px){
 
 .navbar{
-flex-direction:column;
-gap:15px;
+    flex-direction:column;
+    gap:15px;
 }
 
-.navbar ul{
-flex-wrap:wrap;
-justify-content:center;
+.navbar a{
+    margin:0 10px;
 }
+
 
 .hero h1{
-font-size:36px;
+    font-size:34px;
 }
 
+
 .hero p{
-font-size:17px;
+    font-size:15px;
+}
+
+
+.tools{
+    padding:40px 5%;
+}
+
+.section-title{
+    font-size:28px;
 }
 
 }
