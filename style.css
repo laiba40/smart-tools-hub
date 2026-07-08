@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Reset */
 *{
     margin:0;
     padding:0;
@@ -8,39 +8,36 @@
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#f8fafc;
-    color:#1e293b;
+    background:#f5f7fb;
+    color:#222;
 }
 
-/* Navbar */
 
-.navbar{
+/* Header / Navbar */
+
+header{
+    background:#0f172a;
+    color:white;
+    padding:18px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 8%;
-    background:linear-gradient(135deg,#0f172a,#1e3a8a);
-    color:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
 }
 
-.logo{
-    font-size:26px;
+header h1{
+    font-size:28px;
     font-weight:700;
-    letter-spacing:1px;
 }
 
-.navbar a{
+header nav a{
     color:white;
     text-decoration:none;
     margin-left:25px;
-    font-weight:500;
+    font-size:16px;
     transition:.3s;
 }
 
-.navbar a:hover{
+header nav a:hover{
     color:#38bdf8;
 }
 
@@ -48,133 +45,82 @@ body{
 /* Hero Section */
 
 .hero{
-    min-height:80vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     text-align:center;
-    padding:40px 10%;
-    background:
-    linear-gradient(135deg,rgba(15,23,42,.9),rgba(37,99,235,.8)),
-    url("background.jpg");
-    background-size:cover;
-    color:white;
+    padding:70px 20px;
 }
 
-.hero h1{
-    font-size:48px;
-    margin-bottom:20px;
+.hero h2{
+    font-size:40px;
+    margin-bottom:15px;
+    color:#0f172a;
 }
 
 .hero p{
-    font-size:18px;
-    max-width:650px;
+    font-size:17px;
+    color:#555;
+}
+
+
+/* Tools Grid */
+
+.tool-grid{
+    width:85%;
     margin:auto;
-    opacity:.9;
-}
-
-.hero button{
-    margin-top:30px;
-    padding:14px 35px;
-    border:none;
-    border-radius:30px;
-    background:#38bdf8;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.hero button:hover{
-    transform:translateY(-5px);
-    background:#0ea5e9;
-}
-
-
-/* Tools Section */
-
-.tools{
-    padding:70px 8%;
-}
-
-.section-title{
-    text-align:center;
-    font-size:35px;
-    margin-bottom:40px;
-}
-
-
-.tool-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+    gap:25px;
+    padding-bottom:60px;
 }
 
 
-/* Cards */
+/* Tool Cards */
 
-.card{
+.tool-card{
     background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.4s;
+    padding:30px 25px;
+    border-radius:15px;
     text-align:center;
-    border:1px solid #e2e8f0;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+.tool-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
 }
 
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
+.tool-card h3{
+    color:#0f172a;
+    margin-bottom:12px;
 }
 
 
-.card h3{
-    font-size:22px;
-    margin-bottom:15px;
+.tool-card p{
+    color:#666;
+    margin-bottom:20px;
 }
 
 
-.card p{
-    color:#64748b;
-    font-size:15px;
-}
+/* Buttons */
 
-
-.card button{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:25px;
+.tool-card a,
+button{
+    display:inline-block;
     background:#2563eb;
     color:white;
+    padding:12px 25px;
+    border-radius:8px;
+    text-decoration:none;
+    border:none;
     cursor:pointer;
     transition:.3s;
 }
 
 
-.card button:hover{
+.tool-card a:hover,
+button:hover{
     background:#1d4ed8;
-}
-
-
-/* Input Areas */
-
-input,textarea,select{
-    width:100%;
-    padding:14px;
-    margin:10px 0;
-    border-radius:10px;
-    border:1px solid #cbd5e1;
-    font-size:15px;
-}
-
-
-input:focus,
-textarea:focus{
-    outline:none;
-    border-color:#2563eb;
 }
 
 
@@ -184,27 +130,7 @@ footer{
     background:#0f172a;
     color:white;
     text-align:center;
-    padding:25px;
-    margin-top:50px;
-}
-
-
-/* Animation */
-
-.card{
-    animation:fade .6s ease;
-}
-
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    padding:20px;
 }
 
 
@@ -212,32 +138,17 @@ footer{
 
 @media(max-width:768px){
 
-.navbar{
+header{
     flex-direction:column;
     gap:15px;
 }
 
-.navbar a{
-    margin:0 10px;
+.hero h2{
+    font-size:30px;
 }
 
-
-.hero h1{
-    font-size:34px;
-}
-
-
-.hero p{
-    font-size:15px;
-}
-
-
-.tools{
-    padding:40px 5%;
-}
-
-.section-title{
-    font-size:28px;
+.tool-grid{
+    width:90%;
 }
 
 }
