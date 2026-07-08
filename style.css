@@ -17,9 +17,11 @@ body{
 
 header{
     background:#0f172a;
-header h1{
-    font-size:28px;
-    font-weight:700;
+    color:white;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
@@ -35,17 +37,11 @@ nav{
     display:flex;
     align-items:center;
     gap:25px;
-    margin-left:auto;
 }
 
 header nav a{
     color:white;
     text-decoration:none;
-    margin-left:0;
-    font-size:16px;
-    transition:.3s;
-}
-    margin-left:25px;
     font-size:16px;
     transition:.3s;
 }
@@ -53,7 +49,6 @@ header nav a{
 header nav a:hover{
     color:#38bdf8;
 }
-
 
 /* Hero Section */
 
